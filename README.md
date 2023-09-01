@@ -1,3 +1,3 @@
 ### Tax - Calculator - Montreal
 
-[Calculator](./public/imgs/simple.png)
+![Calculator!](./public/imgs/simple.png)
