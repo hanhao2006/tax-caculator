@@ -1,6 +1,6 @@
 export default function App() {
   return (
-    <div>
+    <div className='containe'>
       <Header />
       <DisplayExpression />
       <Keyborder />
@@ -14,8 +14,8 @@ function Header() {
 
 function DisplayExpression() {
   return (
-    <div>
-      <input type='text' disabled />
+    <div className='display'>
+      <p> hello</p>
       <DisplayResult />
     </div>
   )
@@ -24,30 +24,35 @@ function DisplayExpression() {
 function DisplayResult() {
   return (
     <>
-      <input type='text' disabled />
+      <p> hello</p>
     </>
   )
 }
 
 function Keyborder() {
-  const operators = ['+', '-', '*', '%', '=']
+  const operators = ['+', '-', '*', '/']
   return (
-    <div>
-      <div>
-        <input type='button' value='AC' />
-        <input type='button' value='+/-' />
-        <input type='button' value='1.5' />
+    <>
+      <div className='bottons'>
+        <div className='btn main-operators'>
+          <input type='button' value='AC' />
+          <input type='button' value='+/-' />
+          <input type='button' value='1.5' />
+          <input type='button' value='%' />
+        </div>
+        <div className='btn numbers-operators'>
+          {Array.from({ length: 10 }, (_, i) => 9 - i).map((i) => (
+            <input type='button' value={i} key={i} />
+          ))}
+          <input type='button' value='.' />
+          <input type='button' value='=' />
+        </div>
+        <div className='btn op-operators'>
+          {operators.map((op, index) => (
+            <input type='button' value={op} key={index} />
+          ))}
+        </div>
       </div>
-      <div>
-        {Array.from({ length: 10 }, (_, i) => 9 - i).map((i) => (
-          <input type='button' value={i} key={i} />
-        ))}
-      </div>
-      <div>
-        {operators.map((op, index) => (
-          <input type='button' value={op} key={index} />
-        ))}
-      </div>
-    </div>
+    </>
   )
 }
