@@ -47,7 +47,7 @@ body {
   flex-wrap: wrap;
 }
 
-.btn input[type='button'] {
+.btn input[type='submit'] {
   width: 100px;
   height: 60px;
   background-color: #fff;
